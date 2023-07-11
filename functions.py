@@ -1,5 +1,50 @@
 import requests
 import geopy.distance #geopy-2.3.0
+import random
+
+
+def get_initial_city(starting_range: str) -> dict:
+
+    looking_for_city = True
+    while looking_for_city == True:
+
+        if starting_range == 'tenk':
+            base_pop = 10000
+            multiple = 20000
+            rand_num = random.randint(0, 45)
+        elif starting_range == 'hundredk':
+            base_pop = 100000
+            multiple = 20000
+            rand_num = random.randint(0, 45)
+        elif starting_range == 'onemil':
+            base_pop = 100000
+            multiple = 50000
+            rand_num = random.randint(0, 235)
+
+        
+        
+
+        min_pop = base_pop + multiple * rand_num
+        max_pop = min_pop + multiple
+
+        print(min_pop, " ", max_pop)
+
+        api_url = f'https://api.api-ninjas.com/v1/city?country=US&min_population={min_pop}&max_population={max_pop}&limit=1'
+
+        try:
+            print('trying')
+            response_dict = get_api_dict(api_url)
+            print('worked')
+        except: 
+            continue
+
+        print(response_dict)
+        print(response_dict['name'])
+        print(response_dict['population'])
+        looking_for_city = False
+
+        return response_dict
+
 
 def get_api_dict(api_url: str) -> dict:
 
@@ -12,7 +57,7 @@ def get_api_dict(api_url: str) -> dict:
 
             response_dict = dict(subString.split(":") for subString in response_str.split(","))
         except:
-            print('Failed, Try Again')
+            print('failed here')
     else:
         print("Error:", response.status_code, response.text)
         
