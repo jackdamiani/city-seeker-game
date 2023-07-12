@@ -7,10 +7,81 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<script>
+		var selectionObject = {
+		  "United States": [
+				"10k-100k",
+				"100k-1M",
+				"1M+"
+			],
+		  "Canada": [
+				"10k-100k",
+				"100k-1M",
+				"1M+"
+			]
+		}
+		window.onload = function() {
+		  var countrySel = document.getElementById("country");
+		  var popSel = document.getElementById("pop");
+		  var chapterSel = document.getElementById("chapter");
+		  for (var x in selectionObject) {
+			countrySel.options[countrySel.options.length] = new Option(x, x);
+		  }
+		  countrySel.onchange = function() {
+			//empty pops- dropdowns
+			popSel.length = 1;
+			//display correct values
+			var y = selectionObject[countrySel.value]
+			for (var i = 0; i < y.length; i++) {
+			  popSel.options[popSel.options.length] = new Option(y[i], y[i]);
+			}
+		  }
+		
+		}
+	</script>
+	<style>
+		.selection-bar {
+		width: 80%; 
+		background-color: #555; /* Dark-grey background */
+		overflow: auto; /* Overflow due to float */
+		display: flex;
+		justify-content: center;
+		}
+
+		.selBar {
+		float: left; /* Float links side by side */
+		text-align: center; /* Center-align text */
+		/* width: 20%; Equal width (5 icons with 20% width each = 100%) */
+		padding: 12px 12px; /* Some top and bottom padding */
+		color: white; /* White text color */
+		font-size: 36px; /* Increased font size */
+		} 
+		
+		.inputPlay {
+			color: white
+		}
+		select {
+			display: inline;
+		}
+
+		.center
+		{
+		position: absolute;
+		margin: auto;
+		top: 10;
+		right: 0;
+		bottom: 50;
+		left: 0;
+		width: 90%;
+		height: 10%;
+		border-radius: 3px;
+		}
+
+	</style>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<!-- <header id="header">
+		<!-- <header>
+			<header id="header">
 				<div class="content">
 					<h1><a href="#">City Seeker Game</a></h1>
 					<ul class="actions">
@@ -20,32 +91,48 @@
 				</div>
 				<div class="image phone"><div class="inner"><img src="images/globe.jpg" alt="" /></div></div>
 				  
-
+			
 				
 
 				<div style="position: absolute; bottom: 4px; font-size: 4pt">
 					<p class="copyright">&copy; <a href="http://damianikidscompany.com">DKC</a></p>
-				</div>
-				
+				</div> 
+				 
 				
 
-			</header> -->
+			</header>  --> 
 			<body>
 				<section id="play" class="wrapper" style="background-color: #4696e5; position: absolute; width: 100%; height: 100%;">
-					<div class="inner alt">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div>
-							<div class="content">
-								<h3>Magna sed ultrices</h3>
-								<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
-							</div>
-						</section>
-						
-					</div>
+					
 
-					<div style="text-align: center;">
+					<!-- <div style="text-align: center;">
 						<div style="width: 80%; height: 80%;  margin: 0 auto; background: #fff; color: #4696e5;">This DIV is centered</div>
-					  </div>
+					</div> -->
+					<div class ="center">
+						<div class="selection-bar">
+							<!-- <form name="form1" id="form1" action="/action_page.php"> -->
+								<div class="selBar">
+									Country: 
+								</div>
+								<div class="selBar">
+								<select name="country" id="country">
+									<option value="" selected="selected">Select country</option>
+								</select>
+								</div>
+								<div class="selBar">
+									Population Range: 
+								</div>
+								<div class="selBar">
+									<select name="pop" id="pop">
+									<option value="" selected="selected">Please select country first</option>
+									</select>
+								</div>
+								<div class="selBar">
+								<input class='inputPlay' type="submit" value="Play"> 
+								</div>
+							<!-- </form> -->
+						</div>
+					</div>
 				</section>
 
 
