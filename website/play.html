@@ -12,6 +12,7 @@
 			height: 400px;
 			}
 		</style>
+
 	</head>
 	<script>
 		var selectionObject = {
@@ -111,47 +112,47 @@
 
 				<div id="map"></div>
 
-							<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-								<script>
-									// Function to initialize the map
-									function initMap() {
-									// Create the map
-									var map = L.map('map').setView([44, -100], 3);
+					<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+						<script>
+							// Function to initialize the map
+							function initMap() {
+							// Create the map
+							var map = L.map('map').setView([44, -100], 3);
 
-									// Add the tile layer (you can use any tile provider you prefer)
-									L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-										attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-										maxZoom: 3
-									}).addTo(map);
+							// Add the tile layer (you can use any tile provider you prefer)
+							L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+								attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+								maxZoom: 3
+							}).addTo(map);
 
-									return map;
-									}
+							return map;
+							}
 
-									// Function to add a marker to the map
-									function addMarker(map, lat, lon) {
-									var marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
-									}
+							// Function to add a marker to the map
+							function addMarker(map, lat, lon) {
+							var marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
+							}
 
-									// Create a red icon for the marker
-									var redIcon = L.icon({
-									iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-									iconSize: [10, 15],
-									iconAnchor: [12, 41],
-									popupAnchor: [1, -34],
-									tooltipAnchor: [16, -28],
-									shadowSize: [41, 41]
-									});
+							// Create a red icon for the marker
+							var redIcon = L.icon({
+							iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+							iconSize: [10, 15],
+							iconAnchor: [12, 41],
+							popupAnchor: [1, -34],
+							tooltipAnchor: [16, -28],
+							shadowSize: [41, 41]
+							});
 
-									// Initialize the map
-									var map = initMap();
+							// Initialize the map
+							var map = initMap();
 
-									// Example usage to add a marker
-									var latitude = 51.5074;  // Latitude of the point
-									var longitude = -0.1278; // Longitude of the point
-									addMarker(map, latitude, longitude);
+							// Example usage to add a marker
+							var latitude = 51.5074;  // Latitude of the point
+							var longitude = -0.1278; // Longitude of the point
+							addMarker(map, latitude, longitude);
 					</script>
 				
-
+					
 				
 
 
@@ -177,7 +178,7 @@
 								</div>
 								<div class="selBar">
 									<select name="pop" id="pop">
-									<option value="" selected="selected">Please select country first</option>
+									<option value="" selected="selected">Please select country first</option>cd web	
 									</select>
 								</div>
 								<div class="selBar">
