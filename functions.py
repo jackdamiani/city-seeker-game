@@ -27,20 +27,20 @@ def get_initial_city(starting_range: str) -> dict:
         min_pop = base_pop + multiple * rand_num
         max_pop = min_pop + multiple
 
-        print(min_pop, " ", max_pop)
+        # print(min_pop, " ", max_pop)
 
         api_url = f'https://api.api-ninjas.com/v1/city?country=US&min_population={min_pop}&max_population={max_pop}&limit=1'
 
         try:
-            print('trying')
+            # print('trying')
             response_dict = get_api_dict(api_url)
-            print('worked')
+            # print('worked')
         except: 
             continue
 
-        print(response_dict)
-        print(response_dict['name'])
-        print(response_dict['population'])
+        # print(response_dict)
+        # print(response_dict['name'])
+        # print(response_dict['population'])
         looking_for_city = False
 
         return response_dict

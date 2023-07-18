@@ -117,12 +117,12 @@
 							// Function to initialize the map
 							function initMap() {
 							// Create the map
-							var map = L.map('map').setView([44, -100], 3);
+							var map = L.map('map').setView([44, -100], 4);
 
 							// Add the tile layer (you can use any tile provider you prefer)
 							L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 								attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-								maxZoom: 3
+								maxZoom: 4
 							}).addTo(map);
 
 							return map;
