@@ -17,7 +17,7 @@ def get_initial_city(starting_range: str) -> dict:
             multiple = 20000
             rand_num = random.randint(0, 45)
         elif starting_range == 'onemil':
-            base_pop = 100000
+            base_pop = 1000000
             multiple = 50000
             rand_num = random.randint(0, 235)
 

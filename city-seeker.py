@@ -12,7 +12,7 @@ location = location.lower()
 guess = ''
 
 
-response_dict = f.get_initial_city('hundredk')
+response_dict = f.get_initial_city('onemil')
 
 location = response_dict['name']
 location = location.lower()
