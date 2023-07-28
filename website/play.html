@@ -58,7 +58,11 @@
             // Function to initialize the map
             function initMap() {
                 // Create the map
-                var map = L.map('map').setView([38, -100], 4);
+                var map
+                if (game._countrySel == 'United States'){
+                    map = L.map('map').setView([38, -100], 4);
+                }
+                
 
                 // Add the tile layer for hard mode
                 if (game._hard_mode == true){
