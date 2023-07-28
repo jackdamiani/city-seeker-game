@@ -1,0 +1,257 @@
+#map {
+height: 50vh;
+width: 100%;
+}
+
+/* How To Button Pops Out for help */
+body{
+    background-color: #4696e5;
+}
+
+.how_to_button{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.how_to_button .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.how_to_button > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 200px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+/* Same style but for Starting Menu */
+.start_menu{
+    background: #4696e5;
+    cursor:pointer;
+    display:block;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    /* height: 80vh; */
+    z-index:10000;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.start_menu .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.start_menu > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #000;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 80%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 1%;
+}
+
+/* Same Style But Win Page */
+.win_page{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.win_page .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.win_page > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 200px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+
+/* Closes How To Menu */
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_how_to {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Start Bar Options */
+.selection-bar {
+    width: 100%; 
+    background-color: white;
+    overflow: auto; /* Overflow due to float */
+    /* display: flex; */
+    justify-content: center;
+}
+
+.selBar {
+    /* float: left; Float links side by side */
+    text-align: center;
+    /* width: 10%; Equal width (5 icons with 20% width each = 100%) */
+    padding: 5px 5px; 
+    color: black; /* White text color */
+    font-size: 24px; /* Increased font size */
+} 
+
+
+/* units button */
+#units_button{
+    background-color: white;
+    border-radius: 12px;
+    border-color: #4696e5;
+    color: #4696e5;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-width: 1px;
+}
+
+/* Hard Button */
+.hard_button{
+    background-color: #2c0404;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Just Play button now */
+.play_button {
+    background-color: #4696e5; 
+    border-radius: 12px;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.selection_menu {
+    background-color: white;
+    border-radius: 12px;
+    border-color: #4696e5;
+    /* border: none; */
+    color: #4696e5;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+#guess_button{
+    background-color: white; 
+    border: none;
+    color: #4696e5;
+    border-radius: 12px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Give up? and Play again? Button */
+.game_button {
+    background-color: black; 
+    border: none;
+    color: white;
+    border-radius: 12px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+#most_recent_guess{
+    background-color: white;
+    padding: 10px 10px;
+    color: #4696e5;
+    border-radius: 12px;
+}
+
+#win_message{
+    background-color: white;
+    padding: 10px 10px;
+    color: #4696e5;
+    border-radius: 12px;
+    border-color: #4696e5;
+}
+
+#guess_table{
+    background-color: white;
+    border-color: #4696e5;
+    padding: 10px 10px;
+    color: #4696e5;
+    border-radius: 12px;
+}
