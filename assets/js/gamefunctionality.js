@@ -105,7 +105,9 @@ function get_initial_city(){
 
 $("#start_game_play").click(function() {
     $('body').trigger('play_load_button');
+    alert('here3')
     setTimeout(function() { start_game(); }, 0); 
+    alert('here4')
     // Causes it to be executed in the background 0ms from now
  });
 
@@ -119,9 +121,10 @@ function play_load_button(){
 
     try{
         document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+        alert('here1')
     }
     catch{
-        alert('here')
+        alert('here2')
         return false;
         
     }
