@@ -196,6 +196,8 @@ function activate_hard_mode(){
         game._hard_mode = false;
         hard_mode_button.innerHTML = "Activate Hard Mode"
     }
+
+    return false;
 }
 
 function guess_button_onclick(){
@@ -304,6 +306,8 @@ function display_most_recent_guess(guess_name, distance){
     most_recent_guess.innerHTML = "Last Guess: " + guess_name + " " + distance;
 
     document.getElementById("most_recent_guess").style.visibility = 'visible';
+
+    return false;
 }
 
 function make_guess_table(sorted_guesses_list) {
@@ -360,6 +364,8 @@ function make_guess_table(sorted_guesses_list) {
     el.innerHTML = "";
     
     el.appendChild(table);
+
+    return false;
 }   
 
 function winner(){
@@ -370,13 +376,16 @@ function winner(){
         $('.popupCloseButton').click(function(){
             $('.win_page').hide();
         });
-    }
+        return false;
+}
+
 
 function reset(){
     value = confirm('Are You Sure? Will Reset Current Game.')
     if(value){
         window.location.reload();
     }
+    return false;
 }
 
 function change_units(){
@@ -392,6 +401,7 @@ function change_units(){
         game._distSel = 'M'
         unit_switch.innerHTML = "Switch to KM"
     }
+    return false;
 }
 
 function show_play(){
@@ -403,7 +413,7 @@ function show_play(){
     if(check1.value != "" && check2.value != ""){
         document.getElementsByClassName("play_button")[0].style.visibility = 'visible';
     }
-
+    return false;
 
 }
 
