@@ -104,11 +104,14 @@ function get_initial_city(){
 }
 
 $("#start_game_play").click(function() {
-    $('body').trigger('play_load_button');
-    alert('here3')
-    setTimeout(function() { start_game(); }, 0); 
-    alert('here4')
-    // Causes it to be executed in the background 0ms from now
+    try{
+        $('body').trigger('play_load_button');
+        setTimeout(function() { start_game(); }, 0); 
+        // Causes it to be executed in the background 0ms from now
+    }
+    catch{
+        start_game();
+    }
  });
 
 // $('#start_game_play').bind('play_load_button', function() {
@@ -118,17 +121,7 @@ $("#start_game_play").click(function() {
 
 
 function play_load_button(){
-
-    try{
-        document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
-        alert('here1')
-    }
-    catch{
-        alert('here2')
-        return false;
-        
-    }
-
+    document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
     return false;
 }
 
