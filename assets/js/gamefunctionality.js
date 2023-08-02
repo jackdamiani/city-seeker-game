@@ -1,4 +1,4 @@
-function start_game(){
+  function start_game(){
     /*
         Starts Game -> Returns Nothing
 
@@ -8,9 +8,6 @@ function start_game(){
         Initializes Map
     
     */
-
-    
-
 
     // gets starting parameters
     var countrySel = document.getElementById("country");
@@ -24,7 +21,7 @@ function start_game(){
     // Hide the Start Menu
     document.getElementsByClassName("start_menu")[0].style.visibility = 'hidden';
     document.getElementsByClassName("play_button")[0].style.visibility = 'hidden';
-
+    
     // gets starting city
     act_dict = get_initial_city()
     game.set_actual_dict(act_dict)
@@ -104,6 +101,25 @@ function get_initial_city(){
         return response_dict
     }
     
+}
+
+$("#start_game_play").click(function() {
+    $('body').trigger('play_load_button()');
+    setTimeout(function() { start_game(); }, 0); 
+    // Causes it to be executed in the background 0ms from now
+ });
+
+$('#start_game_play').bind('play_load_button', function() {
+    $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+});
+
+function play_load_button(){
+
+    document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+    // document.getElementById("start_game_play").blur();
+
+    // start_game();
+    return false;
 }
 
 function getRandomInt(max) {

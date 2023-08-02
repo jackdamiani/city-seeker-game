@@ -27,7 +27,8 @@
 
             // Makes start menu visible
             document.getElementsByClassName("start_menu")[0].style.visibility = 'visible';
-            document.getElementsByClassName("play_button")[0].style.visibility = 'hidden';
+            document.getElementById("start_game_play").style.visibility = 'hidden';
+
 
             // Sets Selection Options
             var countrySel = document.getElementById("country");
@@ -185,7 +186,7 @@
                             <button class="hard_button" id="hard_mode" onclick="activate_hard_mode()">Hard Mode</button>    
                         </div>
                         <div class="selBar">
-                            <button class="play_button" id="start_game_play" onclick=start_game()>Play</button> 
+                            <button class="play_button" id="start_game_play" onclick='play_load_button()'>Play</button>
                         </div>
                 </div>
             </div>
