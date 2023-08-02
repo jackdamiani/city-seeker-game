@@ -110,7 +110,12 @@ $("#start_game_play").click(function() {
  });
 
 $('#start_game_play').bind('play_load_button', function() {
-    $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+    try{
+        $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+    }
+    catch{
+        return;
+    }
 });
 
 function play_load_button(){
