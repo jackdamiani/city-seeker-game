@@ -122,8 +122,13 @@ function get_initial_city(){
 
 
 function play_load_button(){
-    document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
-    setTimeout(function() { start_game(); }, 0); 
+    try{
+        document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+        setTimeout(function() { start_game(); }, 0); 
+    }
+    catch{
+        start_game();
+    }
 }
 
 function getRandomInt(max) {
