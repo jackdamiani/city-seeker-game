@@ -104,26 +104,28 @@ function get_initial_city(){
 }
 
 $("#start_game_play").click(function() {
-    $('body').trigger('play_load_button()');
+    $('body').trigger('play_load_button');
     setTimeout(function() { start_game(); }, 0); 
     // Causes it to be executed in the background 0ms from now
  });
 
+
 $('#start_game_play').bind('play_load_button', function() {
     try{
         $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+        alert('here')
     }
     catch{
-        return;
+        start_game()
+        return false;
     }
 });
+
 
 function play_load_button(){
 
     document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
-    // document.getElementById("start_game_play").blur();
 
-    // start_game();
     return false;
 }
 
