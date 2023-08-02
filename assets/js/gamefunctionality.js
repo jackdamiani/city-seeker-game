@@ -129,6 +129,7 @@ function play_load_button(){
     catch{
         start_game();
     }
+    return false;
 }
 
 function getRandomInt(max) {
