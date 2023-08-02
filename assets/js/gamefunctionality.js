@@ -109,17 +109,14 @@ $("#start_game_play").click(function() {
     // Causes it to be executed in the background 0ms from now
  });
 
-
+try{
 $('#start_game_play').bind('play_load_button', function() {
-    try{
-        $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
-        alert('here')
-    }
-    catch{
-        start_game()
-        return false;
-    }
+    $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
 });
+}
+catch{
+    alert("error")
+}
 
 
 function play_load_button(){
