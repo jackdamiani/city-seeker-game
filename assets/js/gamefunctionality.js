@@ -103,16 +103,17 @@ function get_initial_city(){
     
 }
 
-$("#start_game_play").click(function() {
-    try{
-        $('body').trigger('play_load_button');
-        setTimeout(function() { start_game(); }, 0); 
-        // Causes it to be executed in the background 0ms from now
-    }
-    catch{
-        start_game();
-    }
- });
+
+// $("#start_game_play").click(function() {
+//     try{
+//         $('body').trigger('play_load_button');
+//         setTimeout(function() { start_game(); }, 0); 
+//         // Causes it to be executed in the background 0ms from now
+//     }
+//     catch{
+//         start_game();
+//     }
+//  });
 
 // $('#start_game_play').bind('play_load_button', function() {
 //     $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
@@ -122,7 +123,7 @@ $("#start_game_play").click(function() {
 
 function play_load_button(){
     document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
-    return false;
+    setTimeout(function() { start_game(); }, 0); 
 }
 
 function getRandomInt(max) {
