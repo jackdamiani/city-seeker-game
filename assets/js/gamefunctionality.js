@@ -28,6 +28,8 @@
 
     map = initMap()
     game.set_map(map)
+
+    return false;
 }
 
 
