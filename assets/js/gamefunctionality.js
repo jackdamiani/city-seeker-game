@@ -109,19 +109,22 @@ $("#start_game_play").click(function() {
     // Causes it to be executed in the background 0ms from now
  });
 
-try{
-$('#start_game_play').bind('play_load_button', function() {
-    $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
-});
-}
-catch{
-    alert("error")
-}
+// $('#start_game_play').bind('play_load_button', function() {
+//     $(this).innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+//     // setTimeout(function() { start_game(); }, 0); 
+// });
 
 
 function play_load_button(){
 
-    document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+    try{
+        document.getElementById("start_game_play").innerHTML = 'Loading <i class="fa fa-circle-o-notch fa-spin"></i>';
+    }
+    catch{
+        alert('here')
+        return false;
+        
+    }
 
     return false;
 }
