@@ -102,19 +102,19 @@
                     map = L.map('map').setView([54, -5], 5);
                 }
                 else if (game._countrySel == 'Canada'){
-                    map = L.map('map').setView([55, -100], 4);
+                    map = L.map('map').setView([50, -100], 4);
                 }
                 else if (game._countrySel == 'Mexico'){
                     map = L.map('map').setView([25, -100], 4);
                 }
                 else if (game._countrySel == 'France'){
-                    map = L.map('map').setView([48, 0], 5);
+                    map = L.map('map').setView([47, 0], 5);
                 }
                 else if (game._countrySel == 'Italy'){
                     map = L.map('map').setView([42, 10], 5);
                 }
                 else if (game._countrySel == 'China'){
-                    map = L.map('map').setView([37, 115], 4);
+                    map = L.map('map').setView([37, 115], 3);
                 }
                 else if (game._countrySel == 'India'){
                     map = L.map('map').setView([22, 80], 4);
@@ -125,10 +125,17 @@
                 
 
                 // Add the tile layer for hard mode
-                if (game._hard_mode == true && (game._countrySel == 'United States' || game._countrySel == 'Canada' || game._countrySel == 'Mexico' || game._countrySel == 'China' || game._countrySel == 'India')){
+                if (game._hard_mode == true && (game._countrySel == 'United States' || game._countrySel == 'Canada' || game._countrySel == 'Mexico' || game._countrySel == 'India')){
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                         maxZoom: 4,
+                        minZoom: 3
+                    }).addTo(map);
+                }
+                else if (game._hard_mode == true && (game._countrySel == 'China')){
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                        maxZoom: 3,
                         minZoom: 3
                     }).addTo(map);
                 }
