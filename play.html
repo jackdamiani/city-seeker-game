@@ -15,11 +15,46 @@
     <script>
         // Makes Selection Object For Start
         var selectionObject = {
-		  "United States": [
+            "Canada": [
+                "Easy -- 300k+",
+                "Medium -- 100k-300k",
+				"Hard -- 10k-100k"
+            ],
+            "China": [
                 "Easy -- 1M+",
                 "Medium -- 100k-1M",
 				"Hard -- 10k-100k"
-        ]
+            ],
+            "France": [
+                "Easy -- 200k+",
+                "Medium -- 100k-200k",
+				"Hard -- 10k-100k"
+            ],
+            "India": [
+                "Easy -- 1M+",
+                "Medium -- 100k-1M",
+				"Hard -- 10k-100k"
+            ],
+            "Italy": [
+                "Easy -- 200k+",
+                "Medium -- 100k-200k",
+				"Hard -- 10k-100k"
+            ],
+            "Mexico": [
+                "Easy -- 1M+",
+                "Medium -- 100k-1M",
+				"Hard -- 10k-100k"
+            ],
+            "United Kingdom": [
+                "Easy -- 300k+",
+                "Medium -- 100k-300k",
+				"Hard -- 10k-100k"
+            ],
+            "United States": [
+                "Easy -- 1M+",
+                "Medium -- 100k-1M",
+				"Hard -- 10k-100k"
+            ]
 		}
 
         // Starting Page
@@ -63,13 +98,44 @@
                 if (game._countrySel == 'United States'){
                     map = L.map('map').setView([38, -100], 4);
                 }
+                else if (game._countrySel == 'United Kingdom'){
+                    map = L.map('map').setView([54, -5], 5);
+                }
+                else if (game._countrySel == 'Canada'){
+                    map = L.map('map').setView([55, -100], 4);
+                }
+                else if (game._countrySel == 'Mexico'){
+                    map = L.map('map').setView([25, -100], 4);
+                }
+                else if (game._countrySel == 'France'){
+                    map = L.map('map').setView([48, 0], 5);
+                }
+                else if (game._countrySel == 'Italy'){
+                    map = L.map('map').setView([42, 10], 5);
+                }
+                else if (game._countrySel == 'China'){
+                    map = L.map('map').setView([37, 115], 4);
+                }
+                else if (game._countrySel == 'India'){
+                    map = L.map('map').setView([22, 80], 4);
+                }
+
+
+                
                 
 
                 // Add the tile layer for hard mode
-                if (game._hard_mode == true){
+                if (game._hard_mode == true && (game._countrySel == 'United States' || game._countrySel == 'Canada' || game._countrySel == 'Mexico' || game._countrySel == 'China' || game._countrySel == 'India')){
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                         maxZoom: 4,
+                        minZoom: 3
+                    }).addTo(map);
+                }
+                else if (game._hard_mode == true && (game._countrySel == 'United Kingdom' || game._countrySel == 'France' || game._countrySel == 'Italy')){
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                        maxZoom: 5,
                         minZoom: 3
                     }).addTo(map);
                 }
@@ -125,10 +191,24 @@
             <p class="how_to_play">
                 How to Play:
                 <br>
-                <br>Guess a city: distance from mystery city will be revealed
+                <br>Guess a City: Distance From Mystery City Will Be Revealed
                 <br>
                 <br>Give Up = Reveal Answer
                 <br>Play Again = Restart Game
+                <br>
+                <br>Notes: 
+                <br>-- Guesses Must Be In English 
+                <br>(Ciudad de Mexico = Mexico City)
+                <br>(Roma = Rome)
+                <br>
+                <br>-- Not All Foreign Cities in Database
+                <br>
+                <br>--Guessing Name With >1 City 
+                <br>Will Guess Biggest City
+                <br>But If Answer Will Tell You
+                <br>(Allentown, PA > Allentown, NJ)
+                <br>
+                <br>Good Luck!
             </p>
         </div>
     </div>

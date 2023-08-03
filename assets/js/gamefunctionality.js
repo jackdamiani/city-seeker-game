@@ -43,54 +43,213 @@ function get_initial_city(){
     if (game._countrySel == 'United States'){
         starting_country = 'US'
     }
+    else if (game._countrySel == 'United Kingdom'){
+        starting_country = 'GB'
+    }
+    else if (game._countrySel == 'Canada'){
+        starting_country = 'CA'
+    }
+    else if (game._countrySel == 'Mexico'){
+        starting_country = 'MX'
+    }
+    else if (game._countrySel == 'France'){
+        starting_country = 'FR'
+    }
+    else if (game._countrySel == 'Italy'){
+        starting_country = 'IT'
+    }
+    else if (game._countrySel == 'China'){
+        starting_country = 'CN'
+    }
+    else if (game._countrySel == 'India'){
+        starting_country = 'IN'
+    }
 
     // Starting Population Range
     var starting_range
-    if (game._popSel == "Easy -- 1M+"){
-        starting_range = 'onemil'
+    if (game._popSel == "Easy -- 1M+" || game._popSel == "Easy -- 300k+" || game._popSel == "Easy -- 200k+"){
+        starting_range = 'easy'
     }
-    else if (game._popSel == "Medium -- 100k-1M"){
-        starting_range = 'hundredk'
+    else if (game._popSel == "Medium -- 100k-1M" || game._popSel == "Medium -- 100k-300k" || game._popSel == "Medium -- 100k-200k"){
+        starting_range = 'medium'
     }
     else if (game._popSel == "Hard -- 10k-100k"){
-        starting_range = 'tenk'
+        starting_range = 'hard'
     }
 
-    
-    // TODO: update values
+
     var base_pop;
     var multiple;
     var rand_num;
 
     var looking_for_city = true
     while( looking_for_city == true){
-        if (starting_range == 'tenk'){
+        if (starting_range == 'hard'){
             base_pop = 10000
-            multiple = 500
-            // TODO: have to update random number
-            rand_num = getRandomInt(180)
+            multiple = 250
+            rand_num = getRandomInt(360)
         }
-        else if (starting_range == 'hundredk'){
-            base_pop = 100000
-            multiple = 500
-            rand_num = getRandomInt(1800)
+        else if (starting_range == 'medium'){
+            if (game._countrySel == 'United States' || game._countrySel == 'China' || game._countrySel == 'India'){
+                base_pop = 100000
+                multiple = 500
+                rand_num = getRandomInt(1800)
+            }
+            else if (game._countrySel == 'Mexico'){
+                base_pop = 100000
+                multiple = 5000
+                rand_num = getRandomInt(180)
+            }
+            else if (game._countrySel == 'United Kingdom' || game._countrySel == 'Canada'){
+                base_pop = 100000
+                multiple = 500
+                rand_num = getRandomInt(400)
+            }
+            else if (game._countrySel == 'France' || game._countrySel == 'Italy'){
+                base_pop = 100000
+                multiple = 500
+                rand_num = getRandomInt(200)
+            }
         }
-        else if (starting_range == 'onemil'){
-            base_pop = 1000000
-            multiple = 20000
-            rand_num = getRandomInt(235)
+        else if (starting_range == 'easy'){
+            if (game._countrySel == 'United States'){
+                base_pop = 1000000
+                multiple = 20000
+                rand_num = getRandomInt(235)
+            }
+            else if (game._countrySel == 'China'){
+                rand_num = getRandomInt(90)
+                if (rand_num <= 50){
+                    base_pop = 1000000
+                    multiple = 20000
+                }
+                else if (rand_num > 50 && rand_num <= 70){
+                    base_pop = 2000000
+                    multiple = 50000
+                    rand_num -= 51
+                }
+                else if (rand_num > 70 && rand_num <= 90){
+                    base_pop = 3000000
+                    multiple = 1000000
+                    rand_num -= 71
+                }
+            }
+            else if (game._countrySel == 'India'){
+                rand_num = getRandomInt(90)
+                if (rand_num <= 50){
+                    base_pop = 1000000
+                    multiple = 20000
+                }
+                else if (rand_num > 50 && rand_num <= 70){
+                    base_pop = 2000000
+                    multiple = 50000
+                    rand_num -= 51
+                }
+                else if (rand_num > 70 && rand_num <= 90){
+                    base_pop = 3000000
+                    multiple = 1000000
+                    rand_num -= 71
+                }
+            }
+            else if (game._countrySel == 'Mexico'){
+                rand_num = getRandomInt(23)
+                if (rand_num <= 12){
+                    base_pop = 1000000
+                    multiple = 50000
+                }
+                else if (rand_num > 12 && rand_num <= 20){
+                    base_pop = 1000000
+                    multiple = 200000
+                    rand_num -= 10
+                }
+                else if (rand_num > 20 && rand_num <=22){
+                    base_pop = 1000000
+                    multiple = 100000
+                    rand_num += 21
+                }
+                else if (rand_num > 22 && rand_num <= 23){
+                    base_pop = 20000000
+                    multiple = 1000000
+                    rand_num = 1
+                }
+            }
+            else if (game._countrySel == 'United Kingdom'){
+                rand_num = getRandomInt(125)
+                if (rand_num <= 100){
+                    base_pop = 300000
+                    multiple = 2000
+                }
+                else if (rand_num > 100 && rand_num <= 110){
+                    base_pop = 300000
+                    multiple = 50000
+                    rand_num -= 97
+                }
+                else if (rand_num > 110 && rand_num <=125){
+                    base_pop = 1000000
+                    multiple = 1000000
+                    rand_num -= 111
+                }
+            }
+            else if (game._countrySel == 'France'){
+                rand_num = getRandomInt(25)
+                if (rand_num <= 15){
+                    base_pop = 200000
+                    multiple = 10000
+                }
+                else if (rand_num > 15 && rand_num <= 23){
+                    base_pop = 350000
+                    multiple = 100000
+                    rand_num -= 16
+                }
+                else if (rand_num > 23 && rand_num <=25){
+                    base_pop = 10000000
+                    multiple = 1000000
+                    rand_num -= 24
+                }
+            }
+            else if (game._countrySel == 'Italy'){
+                rand_num = getRandomInt(25)
+                if (rand_num <= 15){
+                    base_pop = 200000
+                    multiple = 10000
+                }
+                else if (rand_num > 15 && rand_num <= 23){
+                    base_pop = 350000
+                    multiple = 100000
+                    rand_num -= 16
+                }
+                else if (rand_num > 23 && rand_num <=27){
+                    base_pop = 1000000
+                    multiple = 1000000
+                    rand_num -= 24
+                }
+            }
+            else if (game._countrySel == 'Canada'){
+                rand_num = getRandomInt(56)
+                if (rand_num <= 40){
+                    base_pop = 300000
+                    multiple = 5000
+                }
+                else if (rand_num > 40 && rand_num <= 50){
+                    base_pop = 500000
+                    multiple = 50000
+                    rand_num -= 41
+                }
+                else if (rand_num > 50 && rand_num <=56){
+                    base_pop = 1000000
+                    multiple = 1000000
+                    rand_num -= 51
+                }
+            }
         }
 
         // gets population range
         var min_pop = base_pop + multiple * rand_num
         var max_pop = min_pop + multiple
-
         // Api Url made
         var api_url = 'https://api.api-ninjas.com/v1/city?country=' + starting_country + '&min_population=' + min_pop + '&max_population=' + max_pop + '&limit=1';
-
         // API call. If fails goes back to start of loop
         response_dict = get_api_call(api_url)
-
         // If fails tries again with different population number
         if (response_dict == 'api_call_failed' || response_dict == undefined) {
             continue
@@ -198,6 +357,7 @@ function guess_button_onclick(){
 
     // Gets guess
     act_dict = game.return_answer.call(game)
+    var name_check = document.getElementById("city_guess").value;
     guess_dict = validate_guess()
     document.getElementById('city_guess').value = "";
 
@@ -210,7 +370,7 @@ function guess_button_onclick(){
     game._numGuesses = game._numGuesses + 1;
 
     // checks if winner
-    _winner = check_if_answer(act_dict, guess_dict)
+    _winner = check_if_answer(act_dict, guess_dict, name_check)
     if (_winner){
         winner()
     }
@@ -265,6 +425,27 @@ function validate_guess(){
     if (game._countrySel == 'United States'){
         starting_country = 'US'
     }
+    else if (game._countrySel == 'United Kingdom'){
+        starting_country = 'GB'
+    }
+    else if (game._countrySel == 'Canada'){
+        starting_country = 'CA'
+    }
+    else if (game._countrySel == 'Mexico'){
+        starting_country = 'MX'
+    }
+    else if (game._countrySel == 'France'){
+        starting_country = 'FR'
+    }
+    else if (game._countrySel == 'Italy'){
+        starting_country = 'IT'
+    }
+    else if (game._countrySel == 'China'){
+        starting_country = 'CN'
+    }
+    else if (game._countrySel == 'India'){
+        starting_country = 'IN'
+    }
 
 
     var city_guess = document.getElementById("city_guess").value;
@@ -273,11 +454,11 @@ function validate_guess(){
     return get_api_call(api_url)
 }
 
-function check_if_answer(act_dict, guess_dict){
+function check_if_answer(act_dict, guess_dict, name_check){
     /*
         Check if answer -> Returns if names match!
     */
-    return (act_dict['name'] == guess_dict['name'])
+    return (act_dict['name'] == guess_dict['name'] || name_check == act_dict['name'].toLowerCase())
 }
 
 
