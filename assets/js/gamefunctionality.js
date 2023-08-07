@@ -1,4 +1,4 @@
-  function start_game(){
+function start_game(){
     /*
         Starts Game -> Returns Nothing
 
