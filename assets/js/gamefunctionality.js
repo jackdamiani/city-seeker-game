@@ -376,7 +376,7 @@ function guess_button_onclick(){
     document.getElementById('city_guess').value = "";
 
     if (guess_dict == 'api_call_failed' || guess_dict == undefined) {
-        alert('Try again. Check Spelling')
+        alert('Try again. Check Spelling Or \nMay Not Be In Our City Database... yet')
         return false
     }
     
