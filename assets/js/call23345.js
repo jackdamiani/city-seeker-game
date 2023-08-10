@@ -4,11 +4,6 @@ function get_api_call232424(){
         Input: API URL to call
     */
 
-    // have to make and update global variable
-    var response_dict
-    function updateResult(data) {
-        response_dict = data[0];
-    }
 
     x1239417 = return_value16763(3);
     x1239416 = return_value16763(6);
