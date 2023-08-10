@@ -15,13 +15,13 @@ function get_api_call232424(){
     x1239467 = return_value16765(4);
     x1239446 = return_value16764(7);
     x1229417 = return_value16765(6);
-    x1239217 = return_value16764(7);
+    x1239217 = return_value16765(7);
     x2239417 = return_value16768(4);
     x1235417 = return_value16769(5);
     x1239617 = return_value16769(6);
     x1249417 = return_value16764(7);
 
-    return x1239217
+    return x1239446
 }
 
 
