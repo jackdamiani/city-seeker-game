@@ -86,7 +86,6 @@ function get_initial_city(){
 
     var looking_for_city = true
     while( looking_for_city == true){
-        alert('looking')
         if (starting_range == 'hard'){
             base_pop = 10000
             multiple = 250
@@ -257,7 +256,6 @@ function get_initial_city(){
         if (response_dict == 'api_call_failed' || response_dict == undefined) {
             continue
         }
-        alert(response_dict['name'])
         // If successful breaks loop
         looking_for_city = false
         return response_dict

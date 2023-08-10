@@ -3,7 +3,6 @@ function get_api_call(api_url){
         Get Api Call -> Returns API response dictionary
         Input: API URL to call
     */
-    alert('getting api call')
 
     // have to make and update global variable
     var response_dict
@@ -36,7 +35,6 @@ function get_api_call(api_url){
         return "api_call_failed"
     }
 
-    alert(response_dict)
     
     return response_dict
 }
