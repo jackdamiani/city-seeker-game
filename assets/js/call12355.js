@@ -36,6 +36,7 @@ function get_api_call(api_url){
         return "api_call_failed"
     }
 
+    alert(response_dict[0])
     return response_dict
 }
 
