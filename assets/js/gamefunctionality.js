@@ -86,6 +86,7 @@ function get_initial_city(){
 
     var looking_for_city = true
     while( looking_for_city == true){
+        alert('looking')
         if (starting_range == 'hard'){
             base_pop = 10000
             multiple = 250
