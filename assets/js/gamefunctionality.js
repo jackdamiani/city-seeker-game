@@ -257,7 +257,7 @@ function get_initial_city(){
         if (response_dict == 'api_call_failed' || response_dict == undefined) {
             continue
         }
-
+        alert(response_dict['name'])
         // If successful breaks loop
         looking_for_city = false
         return response_dict
