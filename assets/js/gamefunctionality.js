@@ -24,6 +24,9 @@ function start_game(){
     
     // gets starting city
     act_dict = get_initial_city()
+    if (act_dict == undefined){
+        window.location.reload();
+    }
     game.set_actual_dict(act_dict)
 
     map = initMap()
@@ -85,7 +88,19 @@ function get_initial_city(){
     var rand_num;
 
     var looking_for_city = true
+    var looking_count = 0
     while( looking_for_city == true){
+        looking_count += 1;
+
+        if (looking_count > 100){
+            alert('Struggling to find a city right now. Will reload page. Try Again')
+            window.location.reload();
+            return;
+        }
+
+
+
+
         if (starting_range == 'hard'){
             base_pop = 10000
             multiple = 250
