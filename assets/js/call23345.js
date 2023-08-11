@@ -10,7 +10,7 @@ function get_api_call232424(){
     x1239427 = return_value16763(7);
     x1239437 = return_value16763(8);
     x1239417 = return_value16763(5);
-    x1235417 = return_value16764(7);
+    x1235417 = return_value16764(4);
     x1239415 = return_value16768(8);
     x1239467 = return_value16765(4);
     x1239446 = return_value16764(7);
@@ -19,7 +19,7 @@ function get_api_call232424(){
     x2239417 = return_value16768(4);
     x1235417 = return_value16769(5);
     x1239617 = return_value16769(6);
-    x1249417 = return_value16764(7);
+    x1249417 = return_value16764(4);
 
     return x1239446
 }
@@ -115,7 +115,7 @@ function return_value16764(index){
     a23040 = 'VQbo00rWQftS9tI8c9OEJIbLymAzJmfzarWhUe9g'
     a13941 = 'VQbo00rWQft49tI8c9OEJIbLymAzJmfzarWhUe9h'
     a23489 = 'VQbo00rWQftS9tI8c9OEJIbLymAzJmfzarWhUe9g'
-    a16754 = 'VQbo00rWQftS9tI8c9OEJIbLymAzJmfzarWhUe9h'
+    a16754 = 'NyHiTIhmPqOMYZZZCIkPcI7qvA8kkVS8CA1JUGdW'
     a12398 = 'VQbo00rWQftS9tI8d9OEJIbLymAzJmgzarWhUe9h'
     a02347 = 'VQbo0OrWQftS9tI8c9OEJIbLymAzJmgzarWhUe9h'
     a14082 = 'VQbo00rWQftS9tI8c9OEJIbLymAzJmgAZrWhUe9h'
