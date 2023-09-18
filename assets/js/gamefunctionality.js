@@ -486,7 +486,7 @@ function check_if_answer(act_dict, guess_dict, name_check){
     /*
         Check if answer -> Returns if names match!
     */
-    return (act_dict['name'] == guess_dict['name'] || name_check == act_dict['name'].toLowerCase())
+    return (act_dict['name'] == guess_dict['name'] || name_check.toLowerCase() == act_dict['name'].toLowerCase())
 }
 
 
