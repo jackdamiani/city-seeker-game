@@ -2538,8 +2538,8 @@ input, select, textarea {
 				-webkit-flex-direction: column;
 				-ms-flex-direction: column;
 				flex-direction: column;
-				margin-left: 0;
-				width: 100% !important;
+				margin-left: 25%;
+				width: 50% !important;
 			}
 
 				ul.actions:not(.fixed) li {
@@ -2557,7 +2557,7 @@ input, select, textarea {
 				}
 
 					ul.actions:not(.fixed) li > * {
-						width: 100%;
+						width: 50%;
 					}
 
 					ul.actions:not(.fixed) li:first-child {
