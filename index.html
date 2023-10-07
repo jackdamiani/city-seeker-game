@@ -4,6 +4,9 @@
 		<title>City Seeker</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+		<meta name="keywords" content="City, Seeker, Game, Geography, Map"/>
+		<meta name="description" content="Search for a mystery city by guessing and finding distance"/>
+		<meta name="author" content="Jack Damiani"/>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -86,8 +89,18 @@
             }
 		</style>
 	</head>
-	<body class="is-preload">
+	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-E5FJEX3BD7"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
+	gtag('config', 'G-E5FJEX3BD7');
+	</script>
+	
+	<body class="is-preload" style="background-color: #4696e5;">
 		<!-- Header -->
 			<header id="header">
 				<div class="content">
@@ -109,12 +122,18 @@
 						<p class="how_to_play">
 							How to Play:
 							<br>
-							<br> A random city is picked with these options:
+							<br> A mystery city is selected!
+							<br> You have to find it by guessing and
+							<br> it will tell you how far away you are.
+							<br> 
+							<br> These are the parameters to start:
 							<br>
 								<br>1. Select Country
 								<br>2. Select Population Range of the City                    
 								<br>3. Units: Select Miles or Kilometers
 								<br>4. Hard Mode: No Zoom Allowed
+							<br>
+							<br> Good Luck!
 						</p>
 					</div>
 				</div>
@@ -126,7 +145,7 @@
 						<li></li>
 					</ul>
 					<p class="copyright">
-						&copy; <a href="http://damianikidscompany.com">DKC </a>
+						&copy; <a href="https://damianikidscompany.com">DKC </a>
 						<span style="visibility: hidden;">J</span>
 						<a href="https://forms.gle/9iAUJrDvYp7RKkqq6" class="button solid">FEEDBACK FORM</a>
 					</p>
