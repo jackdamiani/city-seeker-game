@@ -48,7 +48,7 @@ function get_initial_city(){
     if (game._countrySel == 'United States'){
         starting_country = 'US'
     }
-    else if (game._countrySel == 'United Kingdom (not Wales)'){
+    else if (game._countrySel == 'United Kingdom (Wales cities in Welsh)'){
         starting_country = 'GB'
     }
     else if (game._countrySel == 'Canada'){
@@ -117,7 +117,7 @@ function get_initial_city(){
                 multiple = 5000
                 rand_num = getRandomInt(180)
             }
-            else if (game._countrySel == 'United Kingdom (not Wales)' || game._countrySel == 'Canada'){
+            else if (game._countrySel == 'United Kingdom (Wales cities in Welsh)' || game._countrySel == 'Canada'){
                 base_pop = 100000
                 multiple = 500
                 rand_num = getRandomInt(400)
@@ -190,7 +190,7 @@ function get_initial_city(){
                     rand_num = 1
                 }
             }
-            else if (game._countrySel == 'United Kingdom (not Wales)'){
+            else if (game._countrySel == 'United Kingdom (Wales cities in Welsh)'){
                 rand_num = getRandomInt(125)
                 if (rand_num <= 100){
                     base_pop = 300000
@@ -453,7 +453,7 @@ function validate_guess(){
     if (game._countrySel == 'United States'){
         starting_country = 'US'
     }
-    else if (game._countrySel == 'United Kingdom (not Wales)'){
+    else if (game._countrySel == 'United Kingdom (Wales cities in Welsh)'){
         starting_country = 'GB'
     }
     else if (game._countrySel == 'Canada'){
