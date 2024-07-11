@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>City Seeker</title>
         <!-- These are maps and style sheets -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -56,7 +56,7 @@
                 "Medium -- 100k-1M",
 				"Hard -- 10k-100k"
             ],
-            "United Kingdom (not Wales)": [
+            "United Kingdom (Wales cities in Welsh)": [
                 "Easy -- 300k+",
                 "Medium -- 100k-300k",
 				"Hard -- 10k-100k"
@@ -109,7 +109,7 @@
                 if (game._countrySel == 'United States'){
                     map = L.map('map').setView([38, -100], 4);
                 }
-                else if (game._countrySel == 'United Kingdom (not Wales)'){
+                else if (game._countrySel == 'United Kingdom (Wales cities in Welsh)'){
                     map = L.map('map').setView([54, -5], 4);
                 }
                 else if (game._countrySel == 'Canada'){
@@ -150,7 +150,7 @@
                         minZoom: 3
                     }).addTo(map);
                 }
-                else if (game._hard_mode == true && (game._countrySel == 'United Kingdom (not Wales)' || game._countrySel == 'France' || game._countrySel == 'Italy')){
+                else if (game._hard_mode == true && (game._countrySel == 'United Kingdom (Wales cities in Welsh)' || game._countrySel == 'France' || game._countrySel == 'Italy')){
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                         maxZoom: 4,
